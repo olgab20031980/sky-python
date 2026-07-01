@@ -17,12 +17,14 @@ def driver():
 
 
 def test_form_submission_validation(driver):
-    driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
-    
+    driver.get(
+        "https://bonigarcia.dev/selenium-webdriver-java/data-types.html"
+        )
+
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "form"))
     )
-    
+
     fields = {
         "first-name": "Иван",
         "last-name": "Петров",
@@ -35,20 +37,24 @@ def test_form_submission_validation(driver):
         "job-position": "QA",
         "company": "SkyPro"
     }
-    
+
     for field_name, value in fields.items():
         field = driver.find_element(By.NAME, field_name)
         field.clear()
         field.send_keys(value)
-    
+
     submit_button = driver.find_element(By.XPATH, "//button[@type='submit']")
     submit_button.click()
-    
+
     time.sleep(2)
-    
+
     page_text = driver.find_element(By.TAG_NAME, "body").text
     print(f"\n=== ТЕКСТ СТРАНИЦЫ ===\n{page_text}\n======================\n")
-    
+
     html = driver.page_source
-    print(f"\n=== HTML СТРАНИЦЫ (первые 2000 символов) ===\n{html[:2000]}\n======================\n")
-    
+
+    print(
+        f"\n=== HTML СТРАНИЦЫ (первые 2000 символов) ===\n"
+        f"{html[:2000]}\n"
+        f"======================\n"
+    )
