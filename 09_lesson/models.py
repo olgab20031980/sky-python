@@ -12,3 +12,13 @@ class Student(Base):
 
     def __repr__(self):
         return f"<Student(id={self.id}, name='{self.name}')>"
+
+
+class Subject(Base):
+    __tablename__ = "subject"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, nullable=False)
+
+    def __repr__(self):
+        return f"<Subject(id={self.id}, name='{self.name}')>"
