@@ -1,0 +1,1 @@
+[{"uid":"fdccbe720cd98fc8","name":"Тест медленного сложения 7 + 8 = 15","time":{"start":1784709646233,"stop":1784709692957,"duration":46724},"status":"passed","severity":"critical"},{"uid":"6abf60f886a78697","name":"Тест оформления заказа с проверкой итоговой суммы","time":{"start":1784709709354,"stop":1784709720569,"duration":11215},"status":"passed","severity":"blocker"}]
